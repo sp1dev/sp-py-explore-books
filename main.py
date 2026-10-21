@@ -26,7 +26,7 @@ with open("YA_Books.csv", mode="r", encoding="utf-8") as bookfile:
 
         # find most recent book (highest number)
         year = int(row[2])
-        if earliest_year < year:
+        if year < earliest_year:
             earliest_year = year
             most_recent_book = row
 
