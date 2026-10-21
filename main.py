@@ -10,7 +10,7 @@ with open("YA_Books.csv", mode="r", encoding="utf-8") as bookfile:
     next(books)
 
     # author col is at index 1
-    min_year = 0
+    earliest_year = 9999          # starts high so any real year is smaller
 
     for row in books:
         # print out authors that start with "M"
@@ -26,8 +26,8 @@ with open("YA_Books.csv", mode="r", encoding="utf-8") as bookfile:
 
         # find most recent book (highest number)
         year = int(row[2])
-        if min_year < year:
-            min_year = year
+        if earliest_year < year:
+            earliest_year = year
             most_recent_book = row
 
         # get the book with the worst rating:
