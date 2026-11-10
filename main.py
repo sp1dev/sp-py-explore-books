@@ -1,6 +1,10 @@
 import csv
 # comma separated value
 import matplotlib.pyplot as plt
+'''
+after adding matplotlib YA GOTTA RUN THE FILE IN THE TERMINAL
+idk why...
+'''
 
 with open("YA_Books.csv", mode="r", encoding="utf-8") as bookfile:
     # mode "r" means read
@@ -11,7 +15,7 @@ with open("YA_Books.csv", mode="r", encoding="utf-8") as bookfile:
     next(books)
 
     # author col is at index 1
-    earliest_year = 9999          # starts high so any real year is smaller
+    earliest_year = 0         
 
     # FOR BAR CHART:
     x_book_titles = []
@@ -24,7 +28,7 @@ with open("YA_Books.csv", mode="r", encoding="utf-8") as bookfile:
 
         # find most recent book (highest number)
         year = int(row[2])
-        if year < earliest_year:
+        if year > earliest_year:
             earliest_year = year
             most_recent_book = row
 
